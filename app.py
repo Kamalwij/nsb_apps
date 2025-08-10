@@ -285,7 +285,7 @@ elif mode == "Variable (rate schedule)":
     )
     total_defined = int(periods_df["months"].sum()) if not periods_df.empty else 0
     if total_defined != months:
-        st.warning(f"Your segments total **{total_defined} months**, but tenure is **{months} months}**.")
+        st.warning(f"Your segments total **{total_defined} months**, but tenure is **{months} months**.")
 
     periods = [(int(r.months), float(r.annual_rate)) for r in periods_df.itertuples(index=False)]
     sched = amortize_variable(loan_amt, periods, start_date=start_date)
